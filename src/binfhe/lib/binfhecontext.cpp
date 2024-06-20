@@ -117,7 +117,7 @@ void BinFHEContext::GenerateBinFHEContext(BINFHE_PARAMSET set, bool arbFunc, uin
 void BinFHEContext::GenerateBinFHEContext(BINFHE_PARAMSET set, BINFHE_METHOD method) {
     enum { PRIME = 0 };  // value for modKS if you want to use the intermediate prime for modulus for key switching
     constexpr double STD_DEV = 3.19 ;
-    constexpr double NSTD_DEV = 0.1;
+    constexpr double NSTD_DEV = 1.1;
     // clang-format off
 
     const std::unordered_map<BINFHE_PARAMSET, BinFHEContextParams> paramsMap
