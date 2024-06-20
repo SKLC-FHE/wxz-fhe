@@ -105,7 +105,7 @@ VectorNTRUBTKey BinFHEScheme::NKeyGen(const std::shared_ptr<BinFHECryptoParams>&
 void Get_invertible_NativeVector(NativeVector& NatVec, NativeVector& NatVec_inv, uint32_t q_boot, uint32_t N) {
 
     // uniform_int_distribution<int> ternary_sampler(-1,1);
-    normal_distribution<double> gaussian_sampler(0.0, 1);
+    normal_distribution<double> gaussian_sampler(0.0, 1.1);
     default_random_engine rand_engine(std::chrono::system_clock::now().time_since_epoch().count());
 
     std::vector<int> vec     = std::vector<int>(N, 0);
