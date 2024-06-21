@@ -152,7 +152,7 @@ void BinFHEContext::GenerateBinFHEContext(BINFHE_PARAMSET set, BINFHE_METHOD met
         { STD128,            { 27,     2048,         503, 1024, 1 << 14, STD_DEV, 1 << 5,    1 <<  9,  32,    10,  UNIFORM_TERNARY} },
         { STD128_LMKCDEY,    { 28,     2048,         446, 1024, 1 << 13, STD_DEV, 1 << 5,    1 << 10,  32,    10,  GAUSSIAN       } },// d=3
         { P128G,             { 21,     2048,         446, 1024, 1 << 14, NSTD_DEV,    32,    1 <<  7,  32,    10,  GAUSSIAN       } },
-        { N128G,             { 21,     2048,         446,  512, 1 << 14, NSTD_DEV,    32,    1 <<  7,  32,    10,  GAUSSIAN       } },//d=3
+        { N128G,             { 21,     2048,         446,  512, 1 << 14, NSTD_DEV,    32,    1 <<  7,  32,     5,  GAUSSIAN       } },//d=3
         { DiNN,              { 27,     2048,         512,  512, 1 << 20, NSTD_DEV,    64,    1 << 10,  32,    10,  GAUSSIAN       } },//d=3
     });
     // clang-format on
