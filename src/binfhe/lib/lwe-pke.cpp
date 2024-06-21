@@ -124,9 +124,10 @@ LWECiphertext LWEEncryptionScheme::Encrypt(const std::shared_ptr<LWECryptoParams
     NativeVector s = sk->GetElement();
     uint32_t n     = s.GetLength();
     s.SwitchModulus(mod);
-    // std::cout << "模切换后的secret"<<s << std::endl;
-    // NativeInteger b = (m % p) * (mod / p) + params->GetDgg().GenerateInteger(mod);
-    NativeInteger b = (m % p) * (mod / p) ;
+
+    DiscreteGaussianGeneratorImpl<NativeVector> dgg_e;
+    dgg_e.SetStd(1.0);
+    NativeInteger b = (m % p) * (mod / p) + dgg_e.GenerateInteger(mod);
     // NativeInteger b = (m % p) * (mod / p);
     // #if defined(BINFHE_DEBUG)
     //    std::cout << b % mod << std::endl;
