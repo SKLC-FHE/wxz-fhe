@@ -117,7 +117,8 @@ void BinFHEContext::GenerateBinFHEContext(BINFHE_PARAMSET set, bool arbFunc, uin
 void BinFHEContext::GenerateBinFHEContext(BINFHE_PARAMSET set, BINFHE_METHOD method) {
     enum { PRIME = 0 };  // value for modKS if you want to use the intermediate prime for modulus for key switching
     constexpr double STD_DEV = 3.19 ;
-    constexpr double NSTD_DEV = 1.1;
+    constexpr double NSTD_DEV = 1.0;
+    constexpr double DiNN_DEV = 0.1;
     // clang-format off
 
     const std::unordered_map<BINFHE_PARAMSET, BinFHEContextParams> paramsMap
@@ -153,7 +154,7 @@ void BinFHEContext::GenerateBinFHEContext(BINFHE_PARAMSET set, BINFHE_METHOD met
         { STD128_LMKCDEY,    { 28,     2048,         446, 1024, 1 << 13, STD_DEV, 1 << 5,    1 << 10,  32,    10,  GAUSSIAN       } },// d=3
         { P128G,             { 21,     2048,         446, 1024, 1 << 14, NSTD_DEV,    32,    1 <<  7,  32,    10,  GAUSSIAN       } },
         { N128G,             { 21,     2048,         446,  512, 1 << 14, NSTD_DEV,    32,    1 <<  7,  32,     5,  GAUSSIAN       } },//d=3
-        { DiNN,              { 27,     2048,         512,  512, 1 << 20, NSTD_DEV,    64,    1 << 10,  32,    10,  GAUSSIAN       } },//d=3
+        { DiNN,              { 27,     2048,         512,  512, 1 << 20, DiNN_DEV,    64,    1 << 10,  32,    10,  GAUSSIAN       } },//d=3
     });
     // clang-format on
 
